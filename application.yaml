@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: inli-app
+  namespace: argocd
+  # Finalizer pour garantir la suppression propre
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  # Projet ArgoCD (default ou créer un projet spécifique)
+  project: default
+  
+  # Source - votre repo Git
+  source:
+    repoURL: https://github.com/YOUR_USERNAME/ArgoCDRepo.git
+    targetRevision: HEAD
+    path: inli-app
+  
+  # Destination - cluster Kubernetes
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: inli-ns
+  
+  # Synchronisation automatique
+  syncPolicy:
+    automated:
+      prune: true      # Supprime les ressources qui ne sont plus dans Git
+      selfHeal: true   # Corrige automatiquement les dérives
+      allowEmpty: false
+    syncOptions:
+      - CreateNamespace=true  # Crée le namespace automatiquement
+      - PruneLast=true        # Supprime les ressources en dernier
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m

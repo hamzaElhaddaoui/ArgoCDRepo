@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inli-deployment
+  namespace: inli-ns
+  labels:
+    app: inli-app
+    ns: inli-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inli-app
+      ns: inli-namespace
+  template:
+    metadata:
+      labels:
+        app: inli-app
+        ns: inli-namespace
+      namespace: inli-ns
+    spec:
+      containers:
+      - name: inli-pod
+        image: python:3.15.0a3-alpine3.23
+        imagePullPolicy: IfNotPresent
+        command: ["/usr/bin/bash", "-c"]
+        args:
+          - |
+            pip install requests beautifulsoup4 discordwebhook && \
+            mkdir /app && \
+            apk add --no-cache git && \
+            git clone https://github.com/your-repo/your-app.git /app && \
+            cd /app && \
+            python inli.py
+        envFrom:
+        - configMapRef:
+            name: inli-config-map
+        - secretRef:
+            name: inli-secret
