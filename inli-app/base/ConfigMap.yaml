@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inli-config-map
+  namespace: inli-ns
+  labels:
+    app: inli-app
+data:
+  FILE_NAME: savedLinks.csv
+  BASE_LINK: https://www.inli.fr
+  SLEEP_MIN: 5
+  SLEEP_MAX: 10
+  INLI_URL: toPatch
+  PLACE_NAME: toPatch

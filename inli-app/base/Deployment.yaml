@@ -5,18 +5,15 @@ metadata:
   namespace: inli-ns
   labels:
     app: inli-app
-    ns: inli-namespace
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: inli-app
-      ns: inli-namespace
   template:
     metadata:
       labels:
         app: inli-app
-        ns: inli-namespace
       namespace: inli-ns
     spec:
       containers:

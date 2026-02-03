@@ -3,14 +3,6 @@ kind: ConfigMap
 metadata:
   name: inli-config-map
   namespace: inli-ns
-  labels:
-    app: inli-app
-    namespace: inli-namespace
 data:
   INLI_URL: https://inli.fr/locations/offres/essonne-departement_d:91?price_min=&price_max=800&area_min=30&area_max=&room_min=1&room_max=5&bedroom_min=1&bedroom_max=5
-  FILE_NAME: savedLinks.csv
-  DISCORD_WEBHOOK: YOUR_DISCORD_WEBHOOK_URL
-  BASE_LINK: https://www.inli.fr
   PLACE_NAME: Essonne
-  SLEEP_MIN: 5
-  SLEEP_MAX: 10
