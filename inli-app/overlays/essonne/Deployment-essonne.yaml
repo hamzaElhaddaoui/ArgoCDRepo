@@ -9,5 +9,7 @@ spec:
       containers:
       - name: inli-pod
         envFrom:
+        - configMapRef:
+            name: inli-config-map-essonne
         - secretRef:
             name: inli-secret-essonne
