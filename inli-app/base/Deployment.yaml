@@ -26,7 +26,7 @@ spec:
             pip install requests beautifulsoup4 discordwebhook && \
             mkdir /app && \
             apk add --no-cache git && \
-            git clone https://github.com/your-repo/your-app.git /app && \
+            git clone https://$GIT_LOGIN:$GIT_TOKEN@$GIT_LINK /app && \
             cd /app && \
             python inli.py
         envFrom:
