@@ -20,7 +20,7 @@ spec:
       - name: inli-pod
         image: python:3.15.0a3-alpine3.23
         imagePullPolicy: IfNotPresent
-        command: ["/usr/bin/bash", "-c"]
+        command: ["/bin/sh", "-c"]
         args:
           - |
             pip install requests beautifulsoup4 discordwebhook && \

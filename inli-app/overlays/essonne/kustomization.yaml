@@ -10,4 +10,5 @@ commonLabels:
 
 patches:
   - path: ConfigMap-essonne.yaml
+  - path: Deployment-essonne.yaml
   
