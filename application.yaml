@@ -12,7 +12,7 @@ spec:
   
   # Source - votre repo Git
   source:
-    repoURL: https://github.com/YOUR_USERNAME/ArgoCDRepo.git
+    repoURL: https://github.com/hamzaElhaddaoui/ArgoCDRepo.git
     targetRevision: HEAD
     path: inli-app
   
