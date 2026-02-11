@@ -24,11 +24,9 @@ spec:
         args:
           - |
             pip install requests beautifulsoup4 discordwebhook && \
-            mkdir /app && \
             apk add --no-cache git && \
             git clone https://$GIT_LOGIN:$GIT_TOKEN@$GIT_LINK /app && \
             cd /app && \
-            mkdir data && \
             python inli.py
         envFrom:
         - configMapRef:
@@ -37,7 +35,7 @@ spec:
             name: inli-secret
         volumeMounts:
           - name: data
-            mountPath: /app/data
+            mountPath: /data
       volumes:
         - name:  data
           persistentVolumeClaim:
