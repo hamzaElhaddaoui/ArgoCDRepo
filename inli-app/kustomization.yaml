@@ -5,6 +5,3 @@ kind: Kustomization
 resources:
   - overlays/essonne
 #   - overlays/another-environment
-commonLabels:
-  app: inli-app
-  managed-by: argocd
