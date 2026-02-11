@@ -6,7 +6,7 @@ metadata:
   labels:
     app: inli-app
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: inli-app
