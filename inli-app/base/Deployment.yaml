@@ -34,3 +34,11 @@ spec:
             name: inli-config-map
         - secretRef:
             name: inli-secret
+        volumeMounts:
+          - name: data
+            mountPath: /app/data
+      volumes:
+        - name:  data
+          persistentVolumeClaim:
+            claimName: inli-pvc
+      
