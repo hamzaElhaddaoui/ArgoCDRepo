@@ -28,6 +28,7 @@ spec:
             apk add --no-cache git && \
             git clone https://$GIT_LOGIN:$GIT_TOKEN@$GIT_LINK /app && \
             cd /app && \
+            mkdir data && \
             python inli.py
         envFrom:
         - configMapRef:
