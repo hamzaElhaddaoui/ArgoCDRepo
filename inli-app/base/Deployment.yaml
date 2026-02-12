@@ -23,6 +23,8 @@ spec:
         command: ["/bin/sh", "-c"]
         args:
           - |
+            ls /data && \
+            cat /data/savedLinks-{placeName}.csv && \
             pip install requests beautifulsoup4 discordwebhook && \
             apk add --no-cache git && \
             git clone https://$GIT_LOGIN:$GIT_TOKEN@$GIT_LINK /app && \
