@@ -4,5 +4,5 @@ metadata:
   name: inli-config-map
   namespace: inli-ns
 data:
-  INLI_URL: https://www.inli.fr/locations/offres/essonne-departement_d:91?price_min=0&price_max=1200&area_min=30&area_max=250&room_min=0&room_max=5&bedroom_min=0&bedroom_max=5
+  INLI_URL: https://www.inli.fr/locations/offres/essonne-departement_d:91?price_min=0&price_max=1000&area_min=45&area_max=250&room_min=0&room_max=5&bedroom_min=0&bedroom_max=5
   PLACE_NAME: Essonne

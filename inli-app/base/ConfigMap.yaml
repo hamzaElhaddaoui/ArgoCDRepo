@@ -6,7 +6,6 @@ metadata:
   labels:
     app: inli-app
 data:
-  FILE_NAME: savedLinks.csv
   BASE_LINK: https://www.inli.fr
   SLEEP_MIN: "5"
   SLEEP_MAX: "10"
