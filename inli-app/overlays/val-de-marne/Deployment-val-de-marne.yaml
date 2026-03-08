@@ -10,6 +10,6 @@ spec:
       - name: inli-pod
         envFrom:
         - configMapRef:
-            name: inli-config-map-essonne
+            name: inli-config-map-val-de-marne
         - secretRef:
-            name: inli-secret-essonne
+            name: inli-secret-val-de-marne
