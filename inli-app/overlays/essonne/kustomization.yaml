@@ -6,7 +6,7 @@ resources:
   - ../../base
 
 commonLabels:
-  ns: inli-ns-essonne
+  place: inli-essonne
 
 patches:
   - path: ConfigMap-essonne.yaml

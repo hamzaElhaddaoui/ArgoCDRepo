@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inli-config-map
+  namespace: inli-ns
+data:
+  INLI_URL: https://www.inli.fr/locations/offres/val-de-marne-departement_d:94?price_min=0&price_max=1000&area_min=45&area_max=250&room_min=0&room_max=5&bedroom_min=0&bedroom_max=5
+  PLACE_NAME: Val-de-Marne

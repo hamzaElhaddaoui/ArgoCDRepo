@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+nameSuffix: -val-de-marne
+
+resources:
+  - ../../base
+
+commonLabels:
+  place: inli-val-de-marne
+
+patches:
+  - path: ConfigMap-val-de-marne.yaml
+  - path: Deployment-val-de-marne.yaml
+  
