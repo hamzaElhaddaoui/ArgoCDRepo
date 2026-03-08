@@ -5,8 +5,9 @@ nameSuffix: -val-de-marne
 resources:
   - ../../base
 
-commonLabels:
-  place: inli-val-de-marne
+labels:
+  - pairs:
+      place: inli-val-de-marne
 
 patches:
   - path: ConfigMap-val-de-marne.yaml

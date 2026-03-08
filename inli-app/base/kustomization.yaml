@@ -3,16 +3,16 @@ kind: Kustomization
 
 # Ordre d'application des ressources
 resources:
-  - Namespace.yaml
   - ConfigMap.yaml
   - SealedSecrets.yaml
   - Deployment.yaml
   - PersistentVolumeClaim.yaml
 
 # Labels communs à toutes les ressources
-commonLabels:
-  app: inli-app
-  managed-by: argocd
+labels:
+  - pairs:
+      app: inli-app
+      managed-by: argocd
 
 # Annotations communes
 commonAnnotations:

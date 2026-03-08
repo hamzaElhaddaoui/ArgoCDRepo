@@ -5,8 +5,9 @@ nameSuffix: -essonne
 resources:
   - ../../base
 
-commonLabels:
-  place: inli-essonne
+labels:
+  - pairs:
+      place: inli-essonne
 
 patches:
   - path: ConfigMap-essonne.yaml
