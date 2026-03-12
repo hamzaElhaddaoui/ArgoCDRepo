@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Ordre d'application des ressources
+resources:
+  - Deployment.yaml
+  - Service.yaml
+  - Ingress.yaml
+
+# Labels communs à toutes les ressources
+labels:
+  - pairs:
+      managed-by: argocd
+
+# Annotations communes
+commonAnnotations:
+  argocd.argoproj.io/sync-wave: "0"

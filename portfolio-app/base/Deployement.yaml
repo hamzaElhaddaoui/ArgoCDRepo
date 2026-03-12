@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-deployment
+  namespace: portfolio-ns
+  labels:
+    app: portfolio-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portfolio-app
+  template:
+    metadata:
+      labels:
+        app: portfolio-app
+    spec:
+      containers:
+      - name: portfolio-pod
+        image: elhaddaoui/hamzaportfolio:e2149f737bca278d056b70429352adc0fbe9313b
