@@ -36,6 +36,8 @@ spec:
         volumeMounts:
           - name: data
             mountPath: /data
+      nodeSelector:
+        node: home-applications
       volumes:
         - name:  data
           persistentVolumeClaim:
