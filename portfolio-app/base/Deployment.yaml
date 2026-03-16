@@ -18,3 +18,6 @@ spec:
       containers:
       - name: portfolio-pod
         image: elhaddaoui/hamzaportfolio:e2149f737bca278d056b70429352adc0fbe9313b
+        imagePullPolicy: IfNotPresent
+      nodeSelector:
+        node: home-applications
