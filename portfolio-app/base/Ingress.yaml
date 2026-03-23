@@ -8,9 +8,31 @@ spec:
   ingressClassName: traefik
   tls:
     - hosts:
+        - hamzaa.fr
+        - www.hamzaa.fr
         - portfolio.hamzaa.fr
       secretName: portfolio-tls
   rules:
+    - host: www.hamzaa.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio-service
+                port:
+                  number: 80
+    - host: hamzaa.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio-service
+                port:
+                  number: 80
     - host: portfolio.hamzaa.fr
       http:
         paths:
