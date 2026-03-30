@@ -2,9 +2,39 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: portfolio-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - hamzaa.fr
+        - www.hamzaa.fr
+        - portfolio.hamzaa.fr
+      secretName: portfolio-tls
   rules:
-    - http:
+    - host: www.hamzaa.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio-service
+                port:
+                  number: 80
+    - host: hamzaa.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio-service
+                port:
+                  number: 80
+    - host: portfolio.hamzaa.fr
+      http:
         paths:
           - path: /
             pathType: Prefix
