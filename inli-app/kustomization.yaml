@@ -3,6 +3,6 @@ kind: Kustomization
 
 # Render the overlay(s) from this root so Argo CD can point to `inli-app` directly.
 resources:
-  - overlays/essonne
-  - overlays/val-de-marne
-#   - overlays/another-environment
+#  - overlays/essonne
+#  - overlays/val-de-marne
+   - overlays/ile-de-france

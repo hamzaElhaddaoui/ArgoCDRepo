@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inli-config-map
+  namespace: inli-ns
+data:
+  INLI_URL: https://www.inli.fr/locations/offres/ile-de-france-region_r:11?price_max=1200&area_min=50
+  PLACE_NAME: Ile-de-france
